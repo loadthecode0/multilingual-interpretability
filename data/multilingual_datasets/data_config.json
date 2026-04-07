@@ -1,0 +1,79 @@
+{
+  "language_mappings": {
+    "en": {"flores": "eng_Latn", "flores_plus": "eng_Latn", "wmt": "en", "opus100": "en"},
+    "fr": {"flores": "fra_Latn", "flores_plus": "fra_Latn", "wmt": "fr", "opus100": "fr"},
+    "de": {"flores": "deu_Latn", "flores_plus": "deu_Latn", "wmt": "de", "opus100": "de"},
+    "es": {"flores": "spa_Latn", "flores_plus": "spa_Latn", "wmt": "es", "opus100": "es"},
+    "it": {"flores": "ita_Latn", "flores_plus": "ita_Latn", "wmt": "it", "opus100": "it"},
+    "pt": {"flores": "por_Latn", "flores_plus": "por_Latn", "wmt": "pt", "opus100": "pt"},
+    "ru": {"flores": "rus_Cyrl", "flores_plus": "rus_Cyrl", "wmt": "ru", "opus100": "ru"},
+    "zh": {"flores": "zho_Hans", "flores_plus": "cmn_Hans", "wmt": "zh", "opus100": "zh"},
+    "ja": {"flores": "jpn_Jpan", "flores_plus": "jpn_Jpan", "wmt": "ja", "opus100": "ja"},
+    "ko": {"flores": "kor_Hang", "flores_plus": "kor_Hang", "wmt": "ko", "opus100": "ko"},
+    "ar": {"flores": "arb_Arab", "flores_plus": "arb_Arab", "wmt": "ar", "opus100": "ar"},
+    "hi": {"flores": "hin_Deva", "flores_plus": "hin_Deva", "wmt": "hi", "opus100": "hi", "dakshina": "hi"},
+    "bn": {"flores": "ben_Beng", "flores_plus": "ben_Beng", "wmt": "bn", "opus100": "bn", "dakshina": "bn"},
+    "ur": {"flores": "urd_Arab", "flores_plus": "urd_Arab", "wmt": "ur", "opus100": "ur", "dakshina": "ur"},
+    "tr": {"flores": "tur_Latn", "flores_plus": "tur_Latn", "wmt": "tr", "opus100": "tr"},
+    "sd": {"dakshina": "sd"}
+  },
+  "datasets": {
+    "flores": {
+      "name": "facebook/flores",
+      "text_fields": ["text"],
+      "split_configs": ["dev", "devtest"],
+      "supported_languages": ["en", "fr", "de", "es", "it", "pt", "ru", "zh", "ja", "ko", "ar", "hi", "bn", "ur", "tr"],
+      "language_param_type": "flores_subset"
+    },
+    "flores_plus": {
+      "name": "openlanguagedata/flores_plus",
+      "text_fields": ["text"],
+      "split_configs": ["dev", "devtest"],
+      "supported_languages": ["en", "fr", "de", "es", "it", "pt", "ru", "zh", "ja", "ko", "ar", "hi", "bn", "ur", "tr"],
+      "language_param_type": "flores_plus_subset",
+      "script_map": {
+        "en": "Latn", "fr": "Latn", "de": "Latn", "es": "Latn",
+        "it": "Latn", "pt": "Latn", "ru": "Cyrl", "zh": "Hans",
+        "ja": "Jpan", "ko": "Hang", "ar": "Arab", "hi": "Deva",
+        "bn": "Beng", "ur": "Arab", "tr": "Latn"
+      }
+    },
+    "wmt19": {
+      "name": "wmt/wmt19",
+      "text_fields": ["translation"],
+      "split_configs": ["train", "validation", "test"],
+      "supported_languages": ["en", "fr", "de", "ru", "zh"],
+      "language_param_type": "pair",
+      "language_pairs": ["en-de", "en-fr", "en-ru", "en-zh"]
+    },
+    "opus100": {
+      "name": "opus100",
+      "text_fields": ["translation"],
+      "split_configs": ["train", "validation", "test"],
+      "supported_languages": ["en", "fr", "de", "es", "it", "pt", "ru", "zh", "ja", "ko", "ar", "hi"],
+      "language_param_type": "pair",
+      "language_pairs": ["en-fr", "en-de", "en-es", "en-it", "en-pt", "en-ru", "en-zh", "en-ja", "en-ko", "en-ar", "en-hi"]
+    },
+    "jw300": {
+      "name": "sentence-transformers/parallel-sentences-jw300",
+      "text_fields": ["sentence"],
+      "split_configs": ["train"],
+      "supported_languages": ["en", "fr", "de", "es", "it", "pt", "ru", "ja", "ko", "ar", "hi"],
+      "language_param_type": "parallel_subset"
+    },
+    "europarl": {
+      "name": "sentence-transformers/parallel-sentences-europarl",
+      "text_fields": ["sentence"],
+      "split_configs": ["train"],
+      "supported_languages": ["en", "fr", "de", "es", "it", "pt"],
+      "language_param_type": "parallel_subset"
+    },
+    "dakshina": {
+      "name": "dakshina",
+      "language_param_type": "dakshina_local",
+      "supported_languages": ["bn", "gu", "hi", "kn", "ml", "mr", "pa", "sd", "si", "ta", "te", "ur"], 
+      "split_configs": ["train"], 
+      "text_fields": ["native"]
+    }
+  }
+}

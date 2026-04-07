@@ -1,0 +1,11 @@
+{
+    "experiment_name": "default_exp",
+    "seed": 42,
+    "device": "cuda",
+    "model_path": "ai-forever/mGPT",
+    "model_name": "mGPT",
+    "data_path": "Helsinki-NLP/opus-100",
+    "language": "en",
+    "method": "SAE",
+    "save_dir": "./outputs"
+}
